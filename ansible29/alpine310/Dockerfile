@@ -23,16 +23,10 @@ RUN apk --no-cache add \
         openssh-client \
         rsync \
         git && \
-    apk --no-cache add --virtual build-dependencies \
-        python3-dev \
-        libffi-dev \
-        openssl-dev \
-        build-base && \
-    pip install --upgrade pip cffi && \
+    pip install cffi && \    
     pip install ansible && \
     pip install mitogen ansible-lint && \
-    pip install --upgrade pywinrm && \
-    apk del build-dependencies && \
+    pip install pywinrm && \
     rm -rf /var/cache/apk/*
 
 RUN mkdir -p /etc/ansible && \

@@ -1,5 +1,5 @@
 # pull base image
-FROM alpine:3.10
+FROM frolvlad/alpine-python3
 
 # Labels.
 LABEL maintainer="tomxiongzh@gmail.com" \
@@ -15,15 +15,12 @@ LABEL maintainer="tomxiongzh@gmail.com" \
 
 RUN apk --no-cache add \
         sudo \
-        python3 \
-        py-pip \
         openssl \
         ca-certificates \
         sshpass \
         openssh-client \
         rsync \
-        git && \
-    pip install cffi && \    
+        git && \  
     pip install ansible && \
     pip install mitogen ansible-lint && \
     pip install pywinrm && \

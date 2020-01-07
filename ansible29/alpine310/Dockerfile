@@ -15,7 +15,7 @@ LABEL maintainer="tomxiongzh@gmail.com" \
 
 RUN apk --no-cache add \
         sudo \
-        python \
+        python3 \
         py-pip \
         openssl \
         ca-certificates \
@@ -24,7 +24,7 @@ RUN apk --no-cache add \
         rsync \
         git && \
     apk --no-cache add --virtual build-dependencies \
-        python-dev \
+        python3-dev \
         libffi-dev \
         openssl-dev \
         build-base && \
